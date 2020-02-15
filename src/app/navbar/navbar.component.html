@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+  <span>Job Tracker</span>
+  <span class="fill-space"></span>
+  <span>Log in</span>
+</mat-toolbar>
+<mat-sidenav-container class="container">
+  <mat-sidenav
+    class="sidenav"
+    mode="side"
+    [opened]="opened"
+    [fixedInViewport]="false"
+  >
+    <!-- Links to components here -->
+    <a class="link" routerLink="/applications">View Applications</a>
+    <a class="link" routerLink="/application/new">Create Application</a>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <!-- Content here -->
+    <ng-content></ng-content>
+    <button (click)="openNav()">
+      toggle sidenav
+    </button>
+  </mat-sidenav-content>
+</mat-sidenav-container>
