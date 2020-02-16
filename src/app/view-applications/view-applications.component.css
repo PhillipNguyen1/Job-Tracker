@@ -1,0 +1,12 @@
+table {
+  width: 100%;
+}
+
+.title {
+  display: flex;
+  padding-left: 16px;
+}
+
+.tableCard {
+  padding: 16px;
+}
