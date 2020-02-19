@@ -45,5 +45,5 @@ export class ViewApplicationsComponent implements OnInit {
     this.applicationService.getAllApplications().subscribe(data => {
       this.applications = data;
     });
-
+  }
 }
