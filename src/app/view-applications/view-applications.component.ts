@@ -11,6 +11,8 @@ import { Application } from "src/model/application";
 export class ViewApplicationsComponent implements OnInit {
   TITLE = "View Applications";
   applications$: Observable<Application[]>;
+  loading: boolean;
+
   displayedColumns: string[] = [
     "Company",
     "Position",
