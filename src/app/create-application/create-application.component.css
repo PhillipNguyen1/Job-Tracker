@@ -1,0 +1,32 @@
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+}
+
+input.salary::-webkit-outer-spin-button,
+input.salary::-webkit-inner-spin-button {
+  display: none;
+}
+
+.form-control {
+  max-width: 350px;
+  margin: auto;
+}
+
+.submit {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.submit-button {
+  min-width: 120px;
+  height: 40px;
+}
+
+mat-form-field {
+  width: 100%;
+}

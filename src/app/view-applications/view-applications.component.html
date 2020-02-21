@@ -1,47 +1,60 @@
-<h1 class="title">{{ TITLE }}</h1>
+<div class="container">
+  <span class="title">
+    <h1>{{ TITLE }}</h1>
+  </span>
 
-<div class="tableCard">
-  <table mat-table [dataSource]="applications" class="mat-elevation-z8">
-    <!--- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" -->
+  <!-- Table -->
+  <div class="tableCard">
+    <table
+      mat-table
+      [dataSource]="applications$ | async"
+      class="mat-elevation-z8"
+    >
+      <!-- Company Name Column -->
+      <ng-container matColumnDef="Company">
+        <th mat-header-cell *matHeaderCellDef>Company</th>
+        <td mat-cell *matCellDef="let element">{{ element.companyName }}</td>
+      </ng-container>
 
-    <!-- Company Name Column -->
-    <ng-container matColumnDef="Company">
-      <th mat-header-cell *matHeaderCellDef>Company</th>
-      <td mat-cell *matCellDef="let element">{{ element.companyName }}</td>
-    </ng-container>
+      <!-- position Column -->
+      <ng-container matColumnDef="Position">
+        <th mat-header-cell *matHeaderCellDef>Position</th>
+        <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+      </ng-container>
 
-    <!-- position Column -->
-    <ng-container matColumnDef="Position">
-      <th mat-header-cell *matHeaderCellDef>Position</th>
-      <td mat-cell *matCellDef="let element">{{ element.position }}</td>
-    </ng-container>
+      <!-- applicationDate Column -->
+      <ng-container matColumnDef="Application Date">
+        <th mat-header-cell *matHeaderCellDef>Application Date</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.applicationDate }}
+        </td>
+      </ng-container>
 
-    <!-- applicationDate Column -->
-    <ng-container matColumnDef="Application Date">
-      <th mat-header-cell *matHeaderCellDef>Application Date</th>
-      <td mat-cell *matCellDef="let element">{{ element.applicationDate }}</td>
-    </ng-container>
+      <!-- location Column -->
+      <ng-container matColumnDef="Location">
+        <th mat-header-cell *matHeaderCellDef>Location</th>
+        <td mat-cell *matCellDef="let element">{{ element.location }}</td>
+      </ng-container>
 
-    <!-- location Column -->
-    <ng-container matColumnDef="Location">
-      <th mat-header-cell *matHeaderCellDef>Location</th>
-      <td mat-cell *matCellDef="let element">{{ element.location }}</td>
-    </ng-container>
+      <!-- status Column -->
+      <ng-container matColumnDef="Status">
+        <th mat-header-cell *matHeaderCellDef>Status</th>
+        <td mat-cell *matCellDef="let element">{{ element.status }}</td>
+      </ng-container>
 
-    <!-- status Column -->
-    <ng-container matColumnDef="Status">
-      <th mat-header-cell *matHeaderCellDef>Status</th>
-      <td mat-cell *matCellDef="let element">{{ element.status }}</td>
-    </ng-container>
+      <!-- salary Column -->
+      <ng-container matColumnDef="Salary">
+        <th mat-header-cell *matHeaderCellDef>Salary</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.salary | currency }}
+        </td>
+      </ng-container>
 
-    <!-- salary Column -->
-    <ng-container matColumnDef="Salary">
-      <th mat-header-cell *matHeaderCellDef>Salary</th>
-      <td mat-cell *matCellDef="let element">{{ element.salary }}</td>
-    </ng-container>
+      <!-- header row -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-  </table>
+      <!-- table data row -->
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
 </div>

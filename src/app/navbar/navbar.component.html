@@ -5,6 +5,7 @@
 </mat-toolbar>
 <mat-sidenav-container class="container">
   <mat-sidenav
+    opened
     class="sidenav"
     mode="side"
     [opened]="opened"
@@ -17,8 +18,18 @@
   <mat-sidenav-content>
     <!-- Content here -->
     <ng-content></ng-content>
-    <button (click)="openNav()">
-      toggle sidenav
+    <button (click)="openNav()" class="toggle">
+      <i class="material-icons">
+        <span *ngIf="!opened; else close">
+          chevron_right
+        </span>
+
+        <ng-template #close>
+          <span>
+            chevron_left
+          </span>
+        </ng-template>
+      </i>
     </button>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -1,1 +1,73 @@
-<p>create-application works!</p>
+<div class="container">
+  <span class="title">
+    <h1>{{ TITLE }}</h1>
+  </span>
+
+  <form class="form-control">
+    <mat-form-field appearance="fill">
+      <mat-label>Company Name</mat-label>
+      <input matInput />
+    </mat-form-field>
+
+    <br />
+
+    <mat-form-field appearance="fill">
+      <mat-label>How Far</mat-label>
+      <input matInput />
+    </mat-form-field>
+
+    <br />
+
+    <mat-form-field appearance="fill">
+      <mat-label>Website</mat-label>
+      <input matInput />
+    </mat-form-field>
+
+    <br />
+
+    <mat-form-field appearance="fill">
+      <mat-label>Position</mat-label>
+      <input matInput />
+    </mat-form-field>
+
+    <br />
+
+    <mat-form-field appearance="fill">
+      <mat-label>Location</mat-label>
+      <input matInput />
+    </mat-form-field>
+
+    <br />
+
+    <mat-form-field appearance="fill">
+      <mat-label>Response</mat-label>
+      <input matInput />
+    </mat-form-field>
+
+    <br />
+
+    <mat-form-field appearance="fill">
+      <mat-label>Amount</mat-label>
+      <input matInput type="number" class="salary" />
+      <span matPrefix>$&nbsp;</span>
+    </mat-form-field>
+    <br />
+
+    <mat-form-field appearance="fill">
+      <mat-label>Status</mat-label>
+      <input matInput />
+    </mat-form-field>
+
+    <div class="submit">
+      <button
+        mat-stroked-button
+        type="submit"
+        color="primary"
+        class="submit-button"
+        (click)="onSubmit()"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,24 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ApplicationService } from "../application.service";
-
-const ELEMENT_DATA: any[] = [
-  {
-    companyName: "Slalom Build",
-    position: "Software Engineer",
-    applicationDate: "2020-02-19",
-    location: "Houston, TX",
-    status: "Accepted",
-    salary: 80000
-  },
-  {
-    companyName: "Google",
-    position: "Software Engineer",
-    applicationDate: "2020-02-15",
-    location: "Houston, TX",
-    status: "Rejected",
-    salary: 100000
-  }
-];
+import { Observable } from "rxjs";
+import { Application } from "src/model/application";
 
 @Component({
   selector: "app-view-applications",
@@ -27,6 +10,7 @@ const ELEMENT_DATA: any[] = [
 })
 export class ViewApplicationsComponent implements OnInit {
   TITLE = "View Applications";
+  applications$: Observable<Application[]>;
   displayedColumns: string[] = [
     "Company",
     "Position",
@@ -35,15 +19,10 @@ export class ViewApplicationsComponent implements OnInit {
     "Status",
     "Salary"
   ];
-  dataSource = ELEMENT_DATA;
-
-  applications;
 
   constructor(private applicationService: ApplicationService) {}
 
   ngOnInit() {
-    this.applicationService.getAllApplications().subscribe(data => {
-      this.applications = data;
-    });
+    this.applications$ = this.applicationService.getAllApplications();
   }
 }
