@@ -3,71 +3,86 @@
     <h1>{{ TITLE }}</h1>
   </span>
 
-  <form class="form-control">
+  <form
+    class="form-control"
+    [formGroup]="applicationForm"
+    (ngSubmit)="onSubmit(applicationForm.value)"
+  >
+    <label for="companyName">Company Name</label>
     <mat-form-field appearance="fill">
-      <mat-label>Company Name</mat-label>
-      <input matInput />
+      <!-- <mat-label>Company Name</mat-label> -->
+      <input matInput formControlName="companyName" />
     </mat-form-field>
 
     <br />
 
+    <label>How Far</label>
     <mat-form-field appearance="fill">
-      <mat-label>How Far</mat-label>
-      <input matInput />
+      <!-- <mat-label>How Far</mat-label> -->
+      <input matInput formControlName="howFar" />
     </mat-form-field>
 
     <br />
 
+    <label>Website</label>
     <mat-form-field appearance="fill">
-      <mat-label>Website</mat-label>
-      <input matInput />
+      <!-- <mat-label>Website</mat-label> -->
+      <input matInput formControlName="website" />
     </mat-form-field>
 
     <br />
 
+    <label>Position</label>
     <mat-form-field appearance="fill">
-      <mat-label>Position</mat-label>
-      <input matInput />
+      <!-- <mat-label>Position</mat-label> -->
+      <input matInput formControlName="position" />
     </mat-form-field>
 
     <br />
 
+    <label>Location</label>
     <mat-form-field appearance="fill">
-      <mat-label>Location</mat-label>
-      <input matInput />
+      <!-- <mat-label>Location</mat-label> -->
+      <input matInput formControlName="location" />
     </mat-form-field>
 
     <br />
 
+    <label>Response</label>
     <mat-form-field appearance="fill">
-      <mat-label>Response</mat-label>
-      <input matInput />
+      <!-- <mat-label>Response</mat-label> -->
+      <input matInput formControlName="response" />
     </mat-form-field>
 
     <br />
 
+    <label>Salary</label>
     <mat-form-field appearance="fill">
-      <mat-label>Amount</mat-label>
-      <input matInput type="number" class="salary" />
+      <!-- <mat-label>Salary</mat-label> -->
+      <input matInput type="number" class="salary" formControlName="salary" />
       <span matPrefix>$&nbsp;</span>
     </mat-form-field>
     <br />
 
+    <label>Status</label>
     <mat-form-field appearance="fill">
-      <mat-label>Status</mat-label>
-      <input matInput />
+      <!-- <mat-label>Status</mat-label> -->
+      <input matInput formControlName="status" />
     </mat-form-field>
 
     <div class="submit">
       <button
-        mat-stroked-button
+        mat-raised-button
         type="submit"
         color="primary"
         class="submit-button"
-        (click)="onSubmit()"
       >
         Submit
       </button>
     </div>
   </form>
+  <!--
+  <div>
+    {{ applicationForm.value | json }}
+  </div> -->
 </div>

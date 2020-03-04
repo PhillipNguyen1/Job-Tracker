@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ApplicationService } from "../application.service";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { Application } from "src/model/application";
 
 @Component({
   selector: "app-create-application",
@@ -9,20 +11,29 @@ import { ApplicationService } from "../application.service";
 export class CreateApplicationComponent implements OnInit {
   TITLE = "Create application";
 
-  companyName: string;
-  howFar: string;
-  website: string;
-  position: string;
-  location: string;
-  response: boolean;
-  salary: number;
-  status: string;
+  applicationForm: FormGroup = this.fb.group({
+    companyName: ["", Validators.required],
+    howFar: [""],
+    website: [""],
+    position: ["", Validators.required],
+    location: [""],
+    response: [""],
+    salary: [""],
+    status: [""]
+  });
 
-  constructor(private applicationService: ApplicationService) {}
+  constructor(
+    private applicationService: ApplicationService,
+    private fb: FormBuilder
+  ) {}
 
   ngOnInit() {}
 
-  onSubmit(): any {
-    console.log("form submitted");
+  // TODO: Add Validations
+  onSubmit(application: Application): any {
+    if (this.applicationForm.valid) {
+      this.applicationService.createApplication(application).subscribe();
+      this.applicationForm.reset();
+    }
   }
 }

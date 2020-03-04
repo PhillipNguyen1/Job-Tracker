@@ -1,5 +1,12 @@
+// TODO: update application
 export interface Application {
   companyName: string;
+  howFar: string;
+  website: string;
   position: string;
-  applicationDate: Date;
+  location: string;
+  response: string;
+  salary: number;
+  status: string;
+  applicationDate?: Date;
 }

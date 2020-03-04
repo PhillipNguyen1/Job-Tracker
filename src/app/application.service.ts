@@ -26,6 +26,6 @@ export class ApplicationService {
   }
 
   createApplication(application: Application): Observable<any> {
-    return this.http.post<Application>(this.baseUrl, application);
+    return this.http.post<any>(this.baseUrl, application);
   }
 }

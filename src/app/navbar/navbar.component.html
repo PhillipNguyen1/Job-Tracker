@@ -18,7 +18,12 @@
   <mat-sidenav-content>
     <!-- Content here -->
     <ng-content></ng-content>
-    <button (click)="openNav()" class="toggle">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="openNav()"
+      class="toggle"
+    >
       <i class="material-icons">
         <span *ngIf="!opened; else close">
           chevron_right
