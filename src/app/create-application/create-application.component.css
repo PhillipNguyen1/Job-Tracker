@@ -27,6 +27,7 @@ input.salary::-webkit-inner-spin-button {
 }
 
 .form-buttons button {
+  font-size: 1rem;
   min-width: 165px;
   height: 50px;
 }

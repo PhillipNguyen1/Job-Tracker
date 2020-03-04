@@ -1,0 +1,16 @@
+@import "~@angular/material/theming";
+@import "./palette.scss";
+@include mat-core();
+
+/* ======== Angular material custom themes ======== */
+$slalom-build-primary: $slalom-build-primary;
+$slalom-build-accent: $slalom-build-accent;
+$slalom-build-warn: $slalom-build-warn;
+
+$slalom-build-theme: mat-dark-theme(
+  $slalom-build-primary,
+  $slalom-build-accent,
+  $slalom-build-warn
+);
+
+@include angular-material-theme($slalom-build-theme);
