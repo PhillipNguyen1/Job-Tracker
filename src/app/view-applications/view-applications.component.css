@@ -14,3 +14,14 @@ table {
 .tableCard {
   margin: 16px;
 }
+
+th {
+  background: white;
+  color: black;
+  font-size: 1rem;
+  font: bold;
+}
+
+tr:nth-child(odd) {
+  background: lightgray;
+}

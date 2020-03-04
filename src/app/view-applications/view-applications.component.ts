@@ -13,18 +13,15 @@ export class ViewApplicationsComponent implements OnInit {
   applications$: Observable<Application[]>;
   loading: boolean;
 
-  displayedColumns: string[] = [
-    "Company",
-    "Position",
-    "Application Date",
-    "Location",
-    "Status",
-    "Salary"
-  ];
+  displayedColumns: string[] = ["Company", "Position"];
 
   constructor(private applicationService: ApplicationService) {}
 
   ngOnInit() {
     this.applications$ = this.applicationService.getAllApplications();
+  }
+
+  onApplicationClick(application: Application) {
+    console.log("application clicked: ", application);
   }
 }

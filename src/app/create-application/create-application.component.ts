@@ -30,8 +30,9 @@ export class CreateApplicationComponent implements OnInit {
   ngOnInit() {}
 
   // TODO: Add Validations
-  onSubmit(application: Application): any {
+  onSubmit(): any {
     if (this.applicationForm.valid) {
+      const application: Application = this.applicationForm.value;
       this.applicationService.createApplication(application).subscribe();
       this.applicationForm.reset();
     }

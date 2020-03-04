@@ -12,19 +12,23 @@ input.salary::-webkit-inner-spin-button {
   display: none;
 }
 
-.form-control {
+.form {
   max-width: 350px;
   margin: auto;
 }
 
-.submit {
-  display: flex;
-  flex-direction: row-reverse;
+.form-control {
+  margin: 4px 0px;
 }
 
-.submit-button {
-  min-width: 120px;
-  height: 40px;
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-buttons button {
+  min-width: 165px;
+  height: 50px;
 }
 
 mat-form-field {
